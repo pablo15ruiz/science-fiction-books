@@ -1,2 +1,2 @@
-# science-fiction-books
-Cas Kaggle
+# Science Fiction Books Classifier
+Cas Kaggle. 2021/2022
