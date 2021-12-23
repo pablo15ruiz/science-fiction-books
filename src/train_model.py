@@ -6,14 +6,12 @@ import pandas as pd
 
 from sklearn.model_selection import train_test_split
 
-import torch
-
 from pytorch_lightning import Trainer
 
 from transformers import BertTokenizer
 
 def main():
-    df = pd.read_csv('data/science_fiction_books.csv')[:100]
+    df = pd.read_csv('../data/science_fiction_books.csv')[:100]
 
     train_df, test_df = train_test_split(df, test_size=0.1)
 
