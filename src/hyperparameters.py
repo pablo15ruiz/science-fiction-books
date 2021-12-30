@@ -13,3 +13,4 @@ LABEL_COLUMNS = [
     'Time Travel'
 ]
 BERT_MODEL_NAME = 'bert-base-cased'
+N_WORKERS = 8

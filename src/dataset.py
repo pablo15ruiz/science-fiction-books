@@ -1,9 +1,10 @@
-from hyperparameters import LABEL_COLUMNS
+from hyperparameters import LABEL_COLUMNS, N_WORKERS
 
 import torch
 from torch.utils.data import Dataset, DataLoader
 
 import pytorch_lightning as pl
+
 
 class ScienceFictionDataset(Dataset):
 
@@ -40,7 +41,8 @@ class ScienceFictionDataset(Dataset):
 
 class ScienceFictionDataModule(pl.LightningDataModule):
 
-    def __init__(self, train_df, test_df, tokenizer, batch_size=8, max_token_len=128):
+    def __init__(self, train_df, test_df, tokenizer,
+                 batch_size=8, max_token_len=128):
         super().__init__()
         self.train_df = train_df
         self.test_df = test_df
@@ -65,19 +67,19 @@ class ScienceFictionDataModule(pl.LightningDataModule):
             self.train_dataset,
             batch_size=self.batch_size,
             shuffle=True,
-            num_workers=8
+            num_workers=N_WORKERS
         )
 
     def val_dataloader(self):
         return DataLoader(
             self.test_dataset,
             batch_size=self.batch_size,
-            num_workers=8
+            num_workers=N_WORKERS
         )
 
     def test_dataloader(self):
         return DataLoader(
             self.test_dataset,
             batch_size=self.batch_size,
-            num_workers=8
+            num_workers=N_WORKERS
         )
