@@ -1,4 +1,5 @@
 data
+model
 *ipynb_checkpoints*
 *pycache*
 *lightning_logs*
