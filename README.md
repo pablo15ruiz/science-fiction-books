@@ -36,16 +36,16 @@ Primer, un model basat en la classe `OneVsRestClassifier` amb l'estimador `Linea
 
 Després, un model usant la llibreria PyTorch Lightning i el model preentrenat  BERT de https://huggingface.co/. Fa servir el model BERT (bert-base-uncased), una capa lineal, la funció d'activació sigmoide, la funció d'error `BCELoss()` i l'optimitzador `AdamW`.
 
-|              Model             | Accuracy | Temps |
-|:------------------------------:|:--------:|:-----:|
-| OneVsRestClassifier(LinearSVC) |    40%   |  20 s  |
-|    PyTorch Lightning + BERT    |    92%   |  1,5 h |
+|              Model             | Accuracy |   Temps  |
+|:------------------------------:|:--------:|:--------:|
+| OneVsRestClassifier(LinearSVC) |    40%   |    20s   |
+|    PyTorch Lightning + BERT    |    70%   | 2h 48min |
 
 ## Demo
 El model ocupa 1,3 GB. No es pot penjar al repositori.
 
 ## Conclusions
-És evident que el model que fa servir BERT resol millor l'objectiu. En comparació amb el model de la llibreria *sklearn* té un rendiment molt superior. En comparació amb els models més punters que utilitzen bilions de paràmetres, es queda una mica enrere. Però no es pot aconseguir més disposant únicament de la GPU al núvol de *Google Colab*.
+És evident que el model que fa servir BERT resol millor l'objectiu. En comparació amb el model de la llibreria *sklearn* té un rendiment molt superior. En comparació amb els models més punters que utilitzen bilions de paràmetres, es queda enrere. Però no es pot aconseguir més disposant únicament de la GPU al núvol de *Google Colab*.
 
 ## En un futur...
 Es podrien investigar més configuracions del model BERT fent servir GPU i TPU més potents.
